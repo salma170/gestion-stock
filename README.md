@@ -11,3 +11,4 @@ chaîne d’intégration continue avec GitHub Actions, comme vu en cours.
 
 ##Équipe
 - Dounia : classe Commande + index.php (C)
+- salma : claase produit + test_produit
