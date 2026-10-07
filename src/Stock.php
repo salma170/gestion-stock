@@ -19,4 +19,22 @@ class Stock
     {
         return $this->produits[$reference] ?? null;
     }
+        public function tous(): array
+    {
+        return array_values($this->produits);
+    }
+
+    public function compter(): int
+    {
+        return count($this->produits);
+    }
+
+    public function valeurTotale(): float
+    {
+        $total = 0.0;
+        foreach ($this->produits as $p) {
+            $total += $p->valeurStock();
+        }
+        return $total;
+    }
 }
