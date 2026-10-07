@@ -1,14 +1,22 @@
 <?php
-$stock = new Stock();
-$stock->ajouter(new Produit('P001', 'Clavier', 150, 10));
 
-verifier($stock->trouver('P001') !== null, 'Stock : trouver() retourne le produit ajouté');
-verifier($stock->trouver('XXX') === null, 'Stock : trouver() retourne null si inconnu');
+class Stock
+{
+    /** @var Produit[] indexés par référence */
+    private array $produits = [];
 
-$doublon = false;
-try {
-    $stock->ajouter(new Produit('P001', 'Autre', 10, 1));
-} catch (InvalidArgumentException $e) {
-    $doublon = true;
+    public function ajouter(Produit $p): void
+    {
+        if (isset($this->produits[$p->getReference()])) {
+            throw new InvalidArgumentException(
+                "La référence " . $p->getReference() . " existe déjà."
+            );
+        }
+        $this->produits[$p->getReference()] = $p;
+    }
+
+    public function trouver(string $reference): ?Produit
+    {
+        return $this->produits[$reference] ?? null;
+    }
 }
-verifier($doublon, 'Stock : référence en double refusée');
