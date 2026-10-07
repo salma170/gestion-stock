@@ -38,3 +38,18 @@ class Stock
         return $total;
     }
 }
+public function produitsEnRupture(): array
+    {
+        return array_values(array_filter(
+            $this->produits,
+            fn(Produit $p) => $p->getQuantite() === 0
+        ));
+    }
+
+    public function produitsSousSeuil(int $seuil): array
+    {
+        return array_values(array_filter(
+            $this->produits,
+            fn(Produit $p) => $p->getQuantite() < $seuil   // strictement inférieur
+        ));
+    }
