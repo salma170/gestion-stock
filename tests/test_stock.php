@@ -12,3 +12,10 @@ try {
     $doublon = true;
 }
 verifier($doublon, 'Stock : référence en double refusée');
+$stock->ajouter(new Produit('P002', 'Souris', 40, 0));
+$stock->ajouter(new Produit('P003', 'Ecran', 800, 3));
+
+verifier($stock->compter() === 3, 'Stock : compter() vaut 3');
+verifier(count($stock->tous()) === 3, 'Stock : tous() retourne 3 produits');
+// 150*10 + 40*0 + 800*3 = 3900
+verifier(abs($stock->valeurTotale() - 3900) < 0.001, 'Stock : valeurTotale() vaut 3900');   
