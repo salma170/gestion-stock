@@ -33,7 +33,7 @@ class Stock
    {
        $total = 0.0;
        foreach ($this->produits as $p) {
-           $total += $p->getPrix();   // BUG : additionne les prix, pas les valeurs de stock
+             $total += $p->valeurStock();
        }
        return $total;
    }
