@@ -37,8 +37,8 @@ class Stock
         }
         return $total;
     }
-}
-public function produitsEnRupture(): array
+
+    public function produitsEnRupture(): array
     {
         return array_values(array_filter(
             $this->produits,
@@ -53,3 +53,4 @@ public function produitsEnRupture(): array
             fn(Produit $p) => $p->getQuantite() < $seuil   // strictement inférieur
         ));
     }
+}
