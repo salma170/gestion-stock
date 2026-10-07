@@ -29,14 +29,14 @@ class Stock
         return count($this->produits);
     }
 
-    public function valeurTotale(): float
-    {
-        $total = 0.0;
-        foreach ($this->produits as $p) {
-            $total += $p->valeurStock();
-        }
-        return $total;
-    }
+     public function valeurTotale(): float
+   {
+       $total = 0.0;
+       foreach ($this->produits as $p) {
+           $total += $p->getPrix();   // BUG : additionne les prix, pas les valeurs de stock
+       }
+       return $total;
+   }
 
     public function produitsEnRupture(): array
     {
