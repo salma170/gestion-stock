@@ -10,5 +10,10 @@ commandes), en appliquant la POO PHP. Le travail est réparti par classes sur un
 chaîne d’intégration continue avec GitHub Actions, comme vu en cours.
 
 ##Équipe
+
 - Dounia : classe Commande + index.php (C)
 - salma : claase produit + test_produit
+
+ - MalakRaguigue : classe Stock (B)
+ - Dounia : classe Commande + index.php (C)
+
