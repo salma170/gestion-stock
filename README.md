@@ -13,4 +13,3 @@ chaîne d’intégration continue avec GitHub Actions, comme vu en cours.
 - salma : claase produit + test_produit(A)
 - MalakRaguigue : classe Stock (B)
 - Dounia : classe Commande + index.php (C)
-
